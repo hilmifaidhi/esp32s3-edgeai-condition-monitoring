@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Muhammad Hilmi Faidhi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu1", "top": 13.42, "left": -256.88, "attrs": {} },
+    { "type": "wokwi-ds18b20", "id": "temp1", "top": -97.13, "left": 119.28, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:3V3", "mpu1:VCC", "red", [ "v0" ] ],
+    [ "esp:3V3", "temp1:VCC", "red", [ "v0" ] ],
+    [ "mpu1:VCC", "esp:3V3.1", "red", [ "v0" ] ],
+    [ "mpu1:GND", "esp:GND.2", "black", [ "v-28.8", "h288.08" ] ],
+    [ "mpu1:SCL", "esp:9", "green", [ "v0" ] ],
+    [ "mpu1:SDA", "esp:8", "green", [ "v0" ] ],
+    [ "temp1:VCC", "esp:3V3.1", "red", [ "v9.6", "h-105.6" ] ],
+    [ "temp1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "temp1:DQ", "esp:GND.4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
